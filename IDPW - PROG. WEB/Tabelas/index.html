@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tabelas</title>
+</head>
+<body>
+
+    <!-- ctrl + barra(/) -> comenta ou descomenta codigo -->
+    <header>
+        <h1>Tabelas</h1>
+    </header>
+
+    <!-- <table> é a tag base da tabela , toda tabela começa com ela-->
+    <table border="1">
+
+        <!--<caption> adiciona uma legenda na tabela-->
+        <caption>Ranking de linguagens de programação - TIOBE</caption>
+
+        <thead> <!--cabeçalho da tabela, muda a semantica-->
+        
+            <!--<tr> cria uma nova linha na tabela / tr = table row = mesa linha-->
+            <tr>
+                <!--<td> cria celulas-->
+                <!--<th> estiliza em negrito - titulo-->
+                <th>Posição no ranking</th>
+                <th>Linguagem de programação</th>
+                <th>Classificações</th>
+            </tr>
+
+        </thead>
+
+        <tbody><!--contem todas as linhas de dados da tabela-->
+            <tr>
+                <td>1º</td>
+                <td>Python</td>
+                <td>20,97%</td>
+            </tr>
+
+            <tr>
+                <td>2º</td>
+                <!--rowspan"(nº de celulas a serem mescladas na vertical)"-->
+                <td rowspan="2">C / C++</td><!--mais acima-->
+                <td rowspan="2">20,37%</td>
+            </tr>
+
+            <tr>
+                <td>3º</td>
+                <!--<td>C++</td>-->
+                <!--<td>8,03%</td>-->
+            </tr>
+
+            <tr>
+                <td>4º</td>
+                <td>Java</td>
+                <td>7,59%</td>
+            </tr>
+        
+        </tbody>
+
+        <tfoot> <!--rodape da tabela-->
+            <tr>
+                <!--colspan="(nº de celulas a serem mescladas na horizontal)" - mesclagem de celulas, sempre comeca da mais acima e a mais à esquerda-->
+
+                <td colspan="2">Total de classificações</td>
+                <!--<td></td> - removido pq quando coloca o colspan essa celula e jogada pro lado-->
+                <td>48,95%</td>
+            </tr>
+        </tfoot>
+    </table>
+
+    <br> <!--so pra espaçar uma tabela e outra-->
+    <br>
+    <br>
+
+    <table border="1">
+        <thead> <!--thead não se mescla com o tbody, melhor, regioes diferentes não se mesclam, tipo tbody+tfoot-->
+            <th>1</th>
+            <th>2</th>
+            <th>3</th>
+            <th>4</th>
+        </thead>
+
+        <tbody>
+            <tr>
+                <td>5</td>
+                <td>6</td>
+                <td>7</td>
+                <td>8</td>
+            </tr>
+
+            <tr>
+                <td>9</td>
+                <td>10</td>
+                <td colspan="2" rowspan="3">11</td>
+                <!--<td>12</td>-->
+            </tr>
+
+            <tr>
+                <td>13</td>
+                <td>14</td>
+                <!--<td colspan="2">15</td>-->
+                <!--<td>16</td>-->
+            </tr>
+
+            <tr>
+                <td>17</td>
+                <td>18</td>
+                <!--<td colspan="2">19</td>-->
+                <!--<td>20</td>-->
+            </tr>
+        </tbody>
+    </table>
+    
+</body>
+</html>

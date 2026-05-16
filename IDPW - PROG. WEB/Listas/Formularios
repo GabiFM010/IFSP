@@ -1,0 +1,13 @@
+<form>
+  -> action: destino dos dados do meu formulario, pra onde eu vou
+  -> method: meio pelo qual o dado é enviado
+      -get: insere os dados do formulario na url, o servidor olha essa url e recupera os dados
+        - file:///home/aluno/Documentos/Gabrielly%20fernanda/IDPW/Formularios/processa.php?nome=Gabrielly+Fernanda&sobrenome=Faria+Maia -> limitação do get: se fosse uma senhak, ficaria exposta na url
+      -post:
+  -> autocomplete:
+      - autocomplete="off" -> não sugere letras (desligado)
+      - autocomplete="on" -> sugere letras (ligado)
+
+script (programa interpretado);
+
+file:///home/aluno/Documentos/Gabrielly%20fernanda/IDPW/Formularios/processa.php?nome=Gabrielly+Fernanda&sobrenome=Faria+Maia -> limitação do get: se fosse uma senhak, ficaria exposta na url

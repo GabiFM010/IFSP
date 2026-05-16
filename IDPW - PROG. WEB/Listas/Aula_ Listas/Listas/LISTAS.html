@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <META charset="UTF-8">
+        <meta name="viewport" content="width=device-width, inicial-scalet=1.0">
+        <title>Listas</title>
+</head>
+    <header>
+        <h1>Listas</h1>
+    </header>
+
+    <nav>
+        <ul>
+            <li> <!--bookmarks-->
+                <a href="#ul">Listas Não Ordenadas</a>
+            </li>
+            <li>
+                <a href="#ol">Listas Ordenadas</a>
+            </li>
+            <li>
+                <a href="la">Listas Aninhadas</a>
+            </li>
+            <li>
+                <a href="dl">Listas De Definição</a>
+            </li>
+        </ul>
+    </nav>
+
+    <main>
+        <section id="ul"> <!--beleza não é nada, o que importa é a estruturação e a semântica!!!-->
+            <h2> Listas não ordenadas</h2> <!--aquelas em que a ordem dos itens não importa-->
+
+            <ul>
+                <li>Danilo</li>
+                <li>Vinicius Jr.</li>
+                <li>Marquinhos</li>
+                <li>Casemiro</li>
+            </ul>
+
+            <ul type="circle"> <!--circulo preto-->
+                <li>Danilo</li>
+                <li>Vinicius Jr.</li>
+                <li>Marquinhos</li>
+                <li>Casemiro</li>
+            </ul>
+
+            <ul type="square"> <!--cquadrado preto-->
+                <li>Danilo</li>
+                <li>Vinicius Jr.</li>
+                <li>Marquinhos</li>
+                <li>Casemiro</li>
+            </ul>
+
+            <ul type="none"> <!--nenhum/vazio-->
+                <li>Danilo</li>
+                <li>Vinicius Jr.</li>
+                <li>Marquinhos</li>
+                <li>Casemiro</li>
+            </ul>
+        </section>
+
+        <section id="ol">
+            <h2>Listas ordenadas</h2> 
+
+            <!--OL: ordenadas listas em ingles-->
+            <ol> <!--Ordem crescente-->
+                <li>França</li>
+                <li>Espanha</li>
+                <li>Portugal</li>
+                <li>Alemanha</li>
+            </ol>
+
+            <ol reversed> <!-- reversed é um atributo booleano, reverte a ordem crescente em decrescente, se ele está presente já é verdadeiro-->
+                <li>França</li>
+                <li>Espanha</li>
+                <li>Portugal</li>
+                <li>Alemanha</li>
+            </ol>
+
+            <ol type="A"> <!--tipo de ol que segue o alfabeto em caixa alta (A, B, C...)-->
+                <li>França</li>
+                <li>Espanha</li>
+                <li>Portugal</li>
+                <li>Alemanha</li>
+            </ol>
+
+            <ol type="a"> <!--tipo de ol que segue o alfabeto em caixa baixa (a, b, c...)-->
+                <li>França</li>
+                <li>Espanha</li>
+                <li>Portugal</li>
+                <li>Alemanha</li>
+            </ol>
+
+            <ol type="I"> <!--tipo de ol que segue os numeros romanos em caixa alta (I, II, III, IV)-->
+                <li>França</li>
+                <li>Espanha</li>
+                <li>Portugal</li>
+                <li>Alemanha</li>
+            </ol>
+
+            <ol type="i"> <!--tipo de ol que segue os numeros romanos em caixa baixa (i, ii, iii, iv)-->
+                <li>França</li>
+                <li>Espanha</li>
+                <li>Portugal</li>
+                <li>Alemanha</li>
+            </ol>
+
+            <ol start="6" reversed> <!--start: define o numero em que a lista vai começar-->
+                <li>França</li>
+                <li>Espanha</li>
+                <li>Portugal</li>
+                <li>Alemanha</li>
+            </ol>
+
+            <!--aninhados: comandos aninhados em c por exemplo: if dentro de if, for dentro do for dentro do for... um dentro do outro, com listas isso pode acontecer-->
+            <!--nada dentro de uma lista pode estar fora de um li-->
+        </section>
+
+        <section id="la">
+            <h2>Listas aninhadas</h2>
+
+            <ul type="none"> <!-- li*3+enter-->
+                <li>Grupo A</li>
+                    <ul>
+                        <li>México</li>
+                            <ul>
+                                <li>Ochoa</li>
+                            </ul>
+                        <li>Africa do Sul</li>
+                            <ul>
+                                <li>---</li>
+                            </ul>
+                        <li>Coréia do Sul</li>
+                        <ul>
+                            <li>Soon</li>
+                        </ul>
+                        <li>Republica Tcheca</li>
+                            <ul>
+                                <li>---</li>
+                            </ul>
+                    </ul>
+                <li>Grupo B</li>
+                    <ul>
+                        <li>Canadá</li>
+                            <ul>
+                                <li>---</li>
+                            </ul>
+                        <li>Suíça</li>
+                            <ul>
+                                <li>---</li>
+                            </ul>
+                        <li>Qatar</li>
+                            <ul>
+                                <li>---</li>
+                            </ul>
+                        <li>Bósnia</li>
+                            <ul>
+                                <li>---</li>
+                            </ul>
+                    </ul>
+
+                <li>Grupo C</li>
+                    <ul>
+                        <li>Brasil</li>
+                            <ul>
+                                <li>Bruno</li>
+                            </ul>
+                        <li>Marrocos</li>
+                            <ul>
+                                <li>---</li>
+                            </ul>
+                        <li>Haiti</li>
+                            <ul>
+                                <li>---</li>
+                            </ul>
+                        <li>Escócia</li>
+                            <ul>
+                                <li>---</li>
+                            </ul>
+                    </ul>
+            </ul>
+
+            <!--FAQ: frequently asked questions-->
+
+            <section id="dl">
+                <h2>Listas de definição</h2> <!--funciona em pares-->
+
+                <dl>
+
+                    <dt>Onde ocorrerá a Copa 2k26?</dt> <!--pergunta-->
+                    <dd>EUA. Canadá e México.</dd> <!--resposta da pergunta-->
+
+                    <dl>Quantas seleções participarão?</dl>
+                    <dd>48 seleções.</dd>
+
+                    <dt>Quando começa a Copa?</dt>
+                    <dd>Em 11 de junho de 2026.</dd>
+                </dl>
+            </section>
+
+            <!--a tag <img> não funciona só, ela precisa de um atributo, o source(src)-->
+            <!--texto alternativo na imagem:-->
+                <!-- 1- se o link da imagem se quebra/perde valor, o texto alternativo sera exibido-->
+                <!-- 2- se uma pessoa com deficiencia visual estiver usando o site ela sera guiada pelo modo narrador pelo texto alternativo-->
+                <!-- 3- robos de busca tbm são guiados pelo texto alternativo-->            
+        </section>
+    </main>
+</html>
+
