@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu Hamburguer</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+
+    <header>
+        <div class="Logo">Logo</div>
+        <!--logo da pagina-->
+        <div class="container">
+
+            <!--identidade do menu hamburguer-->
+            <!--1 clique no botão dispara o js-->
+            <!--toggle: se tem ele tira, se não tem ele poe, oq? o que ta dentro do parentese-->
+            <button class="hamburguer" id="hamburguer" onclick="navmenu.classList.toggle('active');">
+                &#9776; 
+            </button> <!--esse botão sera responsavel por ativar ou desativar a class active do nav-menu-->
+
+            <!--menu de navegação-->
+            <nav class="nav-menu" id="navmenu">
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Sobre</a></li>
+                    <li><a href="#">Serviços</a></li>
+                    <li><a href="#">Fale conosco</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    
+</body>
+</html>
