@@ -1,1 +1,3 @@
 https://www.hashtagtreinamentos.com/formulario-de-login-em-html-e-css - SENHA QUE NÃO MOSTRA AS LETRAS
+
+A tag <head> deve existir apenas uma vez no documento e ficar antes do <body>. Dentro do conteúdo da página, use elementos como <section>, <article>, <h1>, <p>, etc.
