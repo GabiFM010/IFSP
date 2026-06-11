@@ -1,0 +1,7 @@
+// srand((unsigned)time(NULL));
+// return min + rand() % max;)
+
+// min e max sao os valores de limite inferior e superior do intervalo
+// acrescente as bibliotecas stdlib.h e time.h para usar as funções srand(), rand() e time();
+
+// usar void(); p não retornar nada
