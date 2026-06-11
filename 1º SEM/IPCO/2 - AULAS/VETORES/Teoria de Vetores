@@ -1,0 +1,160 @@
+C: LINGUAGEM QUE SE APROXIMA DO COMPUTADOR
+1 – palavras reservadas: palavras que você pode usar que o computador vai entender, ex: for, do, printf…
+
+2 – variáveis e constantes, ex: const, #define, int, float, char…
+
+	associação de palavras minhas = definição de variaveis
+
+3 – estrutura do programa em c
+	→ int main (){ return (0); }
+
+4 – comandos:
+•	exibir / saída: printf
+•	ler/entrada: scanf
+•	atribuição / operadores: = (atribuição)
+               == , != , > , < ( relacionais )
+   + , - , * , / ( aritmeticos )
+   && , || ( logicos )
+
+5 – estruturas:
+•	sequencial ( int main(){} )
+•	condicional ( if{} , switch(){} )
+•	repetição ( for , while , do while )
+
+
+
+6 – vetores
+
+7 – matrizes
+
+8 – funções
+
+9 – arquivos ***
+
+
+//%d – decimal
+
+int main(){
+int numero, dobro;
+printf("Digite um numero: ");
+scanf("%d", &numero);
+
+dobro = numero * 2;
+
+printf("O dobro de %d é %d", numero, dobro);
+
+printf("O dobro do numero e maior que 100");
+
+return (0);
+}
+
+o jeito que tá aqui é sequencial, um embaixo do outro… eu tenho que falar quando não for mais
+#include <stdio.h>
+int main(){
+int numero, dobro;
+for(int i=1; i<=3, i++){ quer que o usuario diga 3 numeros
+printf("\n Digite um numero: \n");
+scanf("%d", &numero);
+dobro = numero * 2;
+printf("\n O dobro de %d é %d \n", numero, dobro);
+if( dobro > 100 ){
+printf("\n O dobro do numero e maior que 100. \n");
+}
+else {
+printf("\n o dobro do numero não e maior que 100. \n");
+}
+}
+return (0);
+}
+
+*** se ctrl c ctrl v facilita, tem que usar vetor
+
+ 
+//1-
+#include <stdio.h>
+
+int main(){
+
+int num1, num2, num3, num4, num5;
+
+printf("\n Digite o numero 1: \n");
+scanf("%d", &num1);
+printf("\n Digite o numero 2: \n");
+scanf("%d", &num2);
+printf("\n Digite o numero 3: \n");
+scanf("%d", &num3);
+printf("\n Digite o numero 4: \n");
+scanf("%d", &num4);
+printf("\n Digite o numero 5: \n");
+scanf("%d", &num5);
+printf("\n Numero 1: %d.\n", num1);
+printf("\n Numero 2: %d.\n", num2);
+printf("\n Numero 3: %d.\n", num3);
+printf("\n Numero 4: %d.\n", num4);
+printf("\n Numero 5: %d.\n", num5);
+return (0);
+
+}
+
+
+
+
+
+
+//2
+#include <stdio.h>
+
+int main(){
+
+int num [10];
+
+for(int i=0; i<=9; i++){ // 10 numeros: 0,1,2,3,4,5,6,7,8,9
+printf("\n Digite o numero %d \n", i);
+scanf("%d", &num[i]);
+}
+for(int i=0; i<=9; i++){
+printf("\n Numero %d: %d", i, num[i]);
+}
+
+return (0);
+}
+
+/*
+repita isso.
+quantas vezes?
+de acordo com o numero do vetor.
+*/
+
+
+
+
+
+
+
+
+
+//3
+#include <stdio.h>
+
+int main(){
+
+int TAM = 10; // aqui fala o tamanho
+int num [TAM]; // aqui tem o numero do tamnaho
+
+for(int i=0; i<=TAM; i++){ // 10 numeros que começa no 0: 0,1,2,3,4,5,6,7,8,9
+printf("\n Digite o numero %d \n", i);
+scanf("%d", &num[i]);
+}
+for(int i=0; i<=TAM; i++){
+printf("\n Numero %d: %d", i, num[i]);
+}
+
+return (0);
+}
+
+/*
+repita isso.
+quantas vezes?
+de acordo com o numero do vetor.
+*/
+
