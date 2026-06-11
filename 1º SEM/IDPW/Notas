@@ -1,0 +1,5 @@
+https://www.hashtagtreinamentos.com/formulario-de-login-em-html-e-css - SENHA QUE NÃO MOSTRA AS LETRAS
+
+A tag <head> deve existir apenas uma vez no documento e ficar antes do <body>. Dentro do conteúdo da página, use elementos como <section>, <article>, <h1>, <p>, etc.
+
+A propriedade display: block Display - CSS - MDN Web Docs serve para estruturar e dimensionar elementos na página. Ela faz com que o elemento ocupe 100% da largura disponível, quebre a linha antes e depois de si mesmo (empurrando outros elementos para cima e para baixo), e permita o ajuste preciso de suas dimensões

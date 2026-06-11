@@ -1,0 +1,52 @@
+<!-- Crie uma página login.html contendo um formulário simples com:
+    ● Um campo para e-mail
+    ● Um campo para senha (o texto digitado não deve ser visível)
+    ● Um botão de entrar
+
+    Gabrielly Fernanda - TSI - J. Arnarldo
+-->
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 1</title>
+</head>
+<body>
+    
+    <header>
+        <h1>Exercicio 1 de Formulários - IDPW</h1>
+    </header>
+
+    <main>
+        <form action="" method="post">
+            <fieldset>   
+                <legend> Dados </legend>
+
+                <!--nome do usuario p/ cadastro-->
+                <label for="nome">Nome</label>
+                <input name="nome" id="nome" required>
+
+                <br>    
+
+                <!--campo de email-->
+                <label for="email">Digite seu E-mail</label>
+                <input type="email" name="email" id="email" required>
+
+                <!-- campo de senha-->
+                <label for="senha">Crie sua senha</label>
+                <input type="password" id="senha" required/>
+                <!--<input type="checkbox" />-->
+
+            </fieldset>
+
+            <br>
+
+            <input type="submit" value="Concluir cadastro">
+
+        </form>
+
+    </main>
+</body>
+</html>

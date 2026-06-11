@@ -1,0 +1,79 @@
+<!--Crie uma página agendamento.html para uma clínica fictícia. O formulário deve
+conter:
+    ● Campo de nome do paciente -
+    ● Campo de data e horário do agendamento -
+    ● Um grupo de botões de rádio para selecionar o tipo de consulta: Clínica Geral, Pediatria ou Ortopedia -
+    ● Uma caixa de texto para o paciente descrever os sintomas -
+    ● Um checkbox para confirmar que leu os termos de agendamento -
+    ● Botão de agendar -
+
+    Gabrielly Fernanda - TSI - J. Arnarldo
+-->
+
+<!DOCTYPE html>
+<html lang="pr-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 3</title>
+</head>
+<body>
+
+    <header>
+        <h1>Exercicio 3 de Formularios - IDPW</h1>
+    </header>
+
+    <main>
+
+        <form action="" method="post">
+            <fieldset>   
+                <legend>Dados para Agendamento</legend>
+
+                <br>
+
+                <!--nome do usuario p/ agendamento-->
+                <label for="nome">Nome completo do paciente: </label> <br>
+                <input name="nome" id="nome" required> <!--required deixa obrigatorio-->
+
+                <br><br>
+
+                <label for="nascimento">Data do agendamento: </label> <br>
+                <input type="date" name="nascimento" id="nascimento" min="2026-05-10" max="2027-12-24" required>
+
+                <br><br>
+
+                <label for="hora">Defina o horário do agendamento:</label>
+                <input type="time" id="hora" name="hora" min="07:00" max="18:00" required>
+
+                <br><br>
+
+                <label for="genero">Tipo de consulta:</label>
+                    <select name="genero" id="genero" required>
+                        <option value="" disabled selected>Selecione aqui:</option>
+                        <option value="toyota">Clínica Geral</option>
+                        <option value="hyundai">Pediatria</option>
+                        <option value="honda">Ortopedia</option>
+                    </select>
+                
+                <br><br>
+
+                <label for="mensagem">Por favor, digite seus sintomas aqui:</label> <br>
+                <textarea id="mensagem" name="mensagem" rows="3" cols="50" required></textarea>
+
+                <br>
+
+                <input type="checkbox" name="termos" id="termos" required>
+                <label for="termos">Declaro que li e concordo com os termos de uso.</label>
+
+            </fieldset>
+
+            <br>
+
+            <input type="submit" value="Agendar Consulta">
+
+        </form>
+
+    </main>
+    
+</body>
+</html>

@@ -1,0 +1,62 @@
+/* Remove margens padrão e define a fonte */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+  
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f1f1f1;
+    padding: 20px;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+  
+/* Container da Galeria */
+.galeria {
+    columns: 1; /* Padrão para celulares */
+    column-gap: 15px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+  
+/* Ajusta as colunas para telas maiores */
+@media (min-width: 600px) {
+    .galeria { columns: 2; }
+}
+@media (min-width: 900px) {
+    .galeria { columns: 3; }
+}
+@media (min-width: 1200px) {
+    .galeria { columns: 4; }
+}
+  
+/* Cada item/card da galeria */
+.card {
+    display: inline-block; /* Garante estabilidade do bloco dentro das colunas */
+    width: 100%;
+    break-inside: avoid; /* Evita que a imagem seja cortada no meio da quebra de coluna */
+    margin-bottom: 15px;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    transition: transform 0.2s ease;
+}
+  
+/* Efeito de zoom ao passar o mouse */
+.card:hover {
+    transform: scale(1.02);
+    cursor: zoom-in; /* Cursor indicando clique para ampliar */
+}
+  
+/* Imagem */
+.card img {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
+}

@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulários</title>
+</head>
+<body>
+    <header>
+        <h1>Exemplos de formulários</h1>
+    </header>
+
+    <main>
+
+        <!-- <form action="processa.php" method="get"> -->
+        <form action="processa.php" method="post"
+        autocomplete="off">
+
+            <fieldset>
+                <legend>Dados pessoais</legend>
+
+                <label for="nome">Nome</label>
+                <input name="nome" id="nome">
+
+                <br><br>
+
+                <label>Sobrenome</label>
+                <input name="sobrenome">
+
+                <br><br>
+
+                <label for="cidade">Cidade de nascimento</label>
+                <input name="cidade" id="cidade" list="listacidade">
+                <datalist id="listacidade">
+                    <option value="Araraquara">
+                    <option value="Américo Brasiliense">
+                    <option value="Rincão">
+                    <option value="Guatapará">
+                    <option value="Matão">                                                
+                </datalist>
+
+
+            </fieldset>
+
+            <br><br>
+
+            <fieldset>
+
+                <legend>Dados do veículo</legend>
+
+                <label for="carro">Marcas de carro</label>
+                <select name="carro" id="carro">
+                    <option value="toyota">Toyota</option>
+                    <option value="hyundai">Hyundai</option>
+                    <option value="honda">Honda</option>
+                    <option value="volkswagen">Volkswagen</option>
+                </select>
+
+                <br><br>
+
+                <label>Marcas de carro</label>
+                <select name="carro" size="3" multiple>
+                    <option value="toyota">Toyota</option>
+                    <option value="hyundai">Hyundai</option>
+                    <option value="honda">Honda</option>
+                    <option value="volkswagen">Volkswagen</option>
+                </select>
+
+                <br><br>
+
+                <label for="carro">Marcas de carro</label>
+                <select name="carro" id="carro">
+                    <option value="toyota">Toyota</option>
+                    <option value="hyundai">Hyundai</option>
+                    <option value="honda" selected>Honda</option>
+                    <option value="volkswagen">Volkswagen</option>
+                </select>
+
+
+                <br><br>
+
+                <label for="carro">Marcas de carro</label>
+                <select name="carro" id="carro">
+                    <option value="" disabled selected>Escolha uma marca</option>
+                    <option value="toyota">Toyota</option>
+                    <option value="hyundai">Hyundai</option>
+                    <option value="honda">Honda</option>
+                    <option value="volkswagen">Volkswagen</option>
+                </select>            
+
+                <br><br>
+
+                <label for="msg">Mensagem</label><br>
+                <textarea name="msg" id="msg" cols="50" rows="10">
+                </textarea>
+
+            </fieldset>
+
+            <br><br>
+
+            <!-- <input type="submit" value="Enviar dados"> -->
+            <button type="submit">Botão</button>
+        </form>
+
+    </main>
+</body>
+</html>
