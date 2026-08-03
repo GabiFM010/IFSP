@@ -11,6 +11,7 @@
    ===================================================================== */
 
 #include <stdio.h>
+#include <string.h>
 
 #define MAX_ALUNOS 50
 #define NUM_NOTAS 3
@@ -28,7 +29,7 @@ typedef struct {
 int cadastrarAlunos(Aluno turma[]);
 float calcularMedia(float notas[], int qtd);
 char definirSituacao(float media); 
-void listarAlunos(Aluon turma[], int n);
+void listarAlunos(Aluno turma[], int n); //aletrada
 int buscarAlunoPorNome(Aluno turma[], int n, char nome[]);
 void estatisticas(Aluno turma[], int n);
 int fatorial(int n);
@@ -43,7 +44,7 @@ int main() {
     do {
         exibirMenu();
         printf("Escolha uma opcao: ");
-        scanf("%d", opcao); 
+        scanf("%d", &opcao); // alterada
 
         /* Estrutura condicional múltipla (switch) */
         switch (opcao) {
@@ -73,7 +74,7 @@ int main() {
                 char palavra[50];
                 printf("Digite uma palavra para testar se e palindromo: ");
                 scanf(" %[^\n]", palavra);
-                if (ehPalindromo(palavra, 0, strlen(palavra))) {
+                if (ehPalindromo(palavra, 0, strlen(palavra) - 1)) {
                     printf("\"%s\" e um palindromo!\n", palavra);
                 } else {
                     printf("\"%s\" nao e um palindromo.\n", palavra);
@@ -82,6 +83,7 @@ int main() {
             }
             case 0:
                 printf("Encerrando o sistema...\n");
+                break;
             default:
                 printf("Opcao invalida!\n");
         }
@@ -112,7 +114,7 @@ int cadastrarAlunos(Aluno turma[]) {
         scanf(" %[^\n]", turma[i].nome);
 
         /* Laço interno (aninhado): um por nota do aluno */
-        for (int j = 0; j <= NUM_NOTAS; j++) {
+        for (int j = 0; j < NUM_NOTAS; j++) {
             float nota;
             printf("Nota %d: ", j + 1);
             scanf("%f", &nota);
@@ -156,18 +158,25 @@ char definirSituacao(float media) {
 
     switch (faixa) {
         case 10:
+            break;
         case 9:
+            break;
         case 8:
             /*Aprovado - Conceito A*/
             situacao = 'A';
+            break;            
         case 7:
+            break;
         case 6:
             /*Aprovado - Conceito B*/
             situacao = 'B';
+            break;
         case 5:
+            break;
         case 4:
             /*Prova Final - Recuperacao*/
             situacao = 'P';
+            break;
         default:
             /*Reprovado*/
             situacao = 'R';
@@ -240,6 +249,9 @@ void estatisticas(Aluno turma[], int n) {
    Função recursiva para calcular o fatorial de um número.
    --------------------------------------------------------------------- */
 int fatorial(int n) {
+
+    if(n == 0 || n == 1) return 1;
+
     return n * fatorial(n - 1);
 }
 
@@ -254,8 +266,10 @@ int fatorial(int n) {
    - Caso contrário, chame a função recursivamente avançando "inicio"
      e recuando "fim".
    --------------------------------------------------------------------- */
-int ehPalindromo(char palavra[], int inicio, int fim) {
-    return 0;
+int ehPalindromo(char palavra[], int primeira, int ultima) {
+    if (primeira >= ultima) return 1;
+
+    if (palavra[primeira] != palavra[ultima]) return 0;
 }
 
 /* ---------------------------------------------------------------------
