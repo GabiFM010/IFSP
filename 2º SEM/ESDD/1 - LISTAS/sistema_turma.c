@@ -28,7 +28,7 @@ typedef struct {
 int cadastrarAlunos(Aluno turma[]);
 float calcularMedia(float notas[], int qtd);
 char definirSituacao(float media); 
-void listarAlunos(Aluno turma[], int n); //alterada
+void listarAlunos(Aluon turma[], int n);
 int buscarAlunoPorNome(Aluno turma[], int n, char nome[]);
 void estatisticas(Aluno turma[], int n);
 int fatorial(int n);
@@ -43,7 +43,7 @@ int main() {
     do {
         exibirMenu();
         printf("Escolha uma opcao: ");
-        scanf("%d", &opcao); //alterada
+        scanf("%d", opcao); 
 
         /* Estrutura condicional múltipla (switch) */
         switch (opcao) {
@@ -56,13 +56,13 @@ int main() {
             case 3: {
                 char nomeBusca[50];
                 printf("Digite o nome do aluno a buscar: ");
-                scanf(" %d[^\n]", nomeBusca); //alterada
+                scanf(" %[^\n]", nomeBusca);
                 int pos = buscarAlunoPorNome(turma, totalAlunos, nomeBusca);
-                
                 if (pos == -1) {
                     printf("Aluno nao encontrado.\n");
                 } else {
-                    printf("Aluno encontrado: %s (media %.2f)\n", turma[pos].nome, turma[pos].media);
+                    printf("Aluno encontrado: %s (media %.2f)\n",
+                           turma[pos].nome, turma[pos].media);
                 }
                 break;
             }
@@ -72,7 +72,7 @@ int main() {
             case 5: {
                 char palavra[50];
                 printf("Digite uma palavra para testar se e palindromo: ");
-                scanf(" %d[^\n]", palavra); //alterada
+                scanf(" %[^\n]", palavra);
                 if (ehPalindromo(palavra, 0, strlen(palavra))) {
                     printf("\"%s\" e um palindromo!\n", palavra);
                 } else {
@@ -80,10 +80,8 @@ int main() {
                 }
                 break;
             }
-            case 0: { /*case alterado*/
+            case 0:
                 printf("Encerrando o sistema...\n");
-                break;
-            }
             default:
                 printf("Opcao invalida!\n");
         }
@@ -111,7 +109,7 @@ int cadastrarAlunos(Aluno turma[]) {
     for (int i = 0; i < qtd; i++) {
         printf("\n--- Aluno %d ---\n", i + 1);
         printf("Nome: ");
-        scanf(" %d[^\n]", &turma[i].nome);
+        scanf(" %[^\n]", turma[i].nome);
 
         /* Laço interno (aninhado): um por nota do aluno */
         for (int j = 0; j <= NUM_NOTAS; j++) {
