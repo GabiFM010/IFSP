@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Olá Mundo (2) em Javascript</title>
+</head>
+<body>
+
+    <p id="texto"></p>
+    <button type="button" onclick="document.getElementById('texto').style.display='none'">
+        Ocultar
+    </button>
+    <!-- 
+    elementos com a mesmo nome mas ações diferentes / type serve pra dizer o que vier depois vai fazer
+    onclick é o que a açaõ vai fazer
+    getElementById é uma função, dentro dele tem que passar o que a função vai usar, o ID que ele vai usar, tem que usar '' por que ja usou "" igual C/C#
+    o innerHtml é pra atribuir algo internamente no negócio
+    style = propriedade css
+    display = css tambem pq bixin ama todo mundo
+    none = chuta
+    -->
+    
+    <button type="button" onclick="document.getElementById('texto').style.display='block'">
+        Mostrar
+    </button>
+</body>
+</html>
