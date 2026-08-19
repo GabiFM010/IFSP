@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <title>Exemplo de soma</title>
+    </head>
+    <body>
+        <p>Digite dois números para calcular a soma</p>
+        Número 1: <input type="number" id="numero1" /><br/>
+        Número 2: <input type="number" id="numero2" />
+        <p id="resultado"></p>
+        <button type="button" onclick="calcular()">
+            Somar
+        </button>
+        <script>
+            function calcular() {
+                let numero1, numero2, soma;
+                numero1 = Number(document.getElementById("numero1").value);
+                numero2 = Number(document.getElementById("numero2").value);
+                soma = numero1 + numero2;
+                document.getElementById("resultado").innerHTML = soma;
+            }
+        </script>
+    </body>
+</html>
