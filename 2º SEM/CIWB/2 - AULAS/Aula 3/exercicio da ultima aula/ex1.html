@@ -1,0 +1,38 @@
+<!-- Sabe-se que um(a) aluno(a) da disciplina CIWB obteve nota 9.0 nos exercícios avaliativos e 7.5 no projeto prático. Sabe-se ainda que a nota final é calculada como a média aritmética das duas notas. Faça um programa em JavaScript para receber as duas notas como entradas, calcular e apresentar a nota final do aluno no bimestre.
+Além disso, exiba como saída se ele foi aprovado (nota final >= 6.0), se ele está de recuperação (nota final < 6.0 e nota final >= 4.0) ou  e ele foi reprovado (nota final < 4.0). -->
+
+<!DOCTYPE html>
+<html lang="pt-br
+">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 1</title>
+</head>
+<body>
+    <script>
+        function principal(){
+            let exercicios= parseFloat(prompt("Nota dos exercicios: "));
+            let projeto = parseFloat(prompt("Nota do projeto: "));
+
+            let media = (exercicios + projeto) / 2;
+            let menssagem = '';
+
+            if (media >= 6.0){
+                mensagem = 'aprovado';
+            } else if (media >= 4.0) { // se a media for < 6
+                mensagem = 'recuperação';
+            } else {
+                mensagem = 'reprovado';
+            }
+
+            alert(
+                "Nota final = " + media.toFixed(1) +"\n" + "Resultado = " + mensagem
+            )
+        }
+
+        principal();
+    </script>
+    
+</body>
+</html>
