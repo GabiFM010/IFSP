@@ -1,0 +1,18 @@
+Bolinhas que se movem pro lugar certo
+
+i0 = |5| 1 4 2 8
+    cinco é menor que 1? não. bolinha do 5 pula pra proxima
+i1 = 1 |5| 4 2 8
+    cinco é menor que 4? não. bolinha do 5 oula pra proxima
+i2 = 1 4 |5| 2 8
+    cinco é menor que 2? não. bolinha do 5 pula pra proxima
+i3 = 1 4 2 |5| 8
+    cinco é menor que 8? sim! mantem assim
+i4 = |1| 4 2 5 8
+    um é menor que 4? sim! mantem assim
+i5 = 1 |4| 2 5 8
+    quatro é menor que 2? não. bolinha do 4 pula pra proxima
+i6 = 1 2 |4| 5 8
+    quatro é menor que 5? sim! mantem assim
+i7 = { 1 2 4 5 8 }
+============== ACABOU ==================
