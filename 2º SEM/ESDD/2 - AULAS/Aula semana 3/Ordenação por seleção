@@ -1,0 +1,4 @@
+{[7] [2] [9] [3] [5]} -> I0 -> analisa todos os indices
+{[2] [7] [9] [3] [5]} -> I-> analisou todos e viu que o 2 era menor, entao a proxima analise agora vai do 7 pra frente
+{[2] [3] [7] [9] [5]} -> analisou todos depois do 2 e viu que o 3 era o segundo menor, entao a proxima analise agora vai do 7 pra frente
+{[2] [3] [5] [7] [9]} -> analisou todos depois do 3 e viu que o 5 era o terceiro menor, entao a proxima analise agora vai do 7 pra frente, mas 7 é menor que 9 então mantém
