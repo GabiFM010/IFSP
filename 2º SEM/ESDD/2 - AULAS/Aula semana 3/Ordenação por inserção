@@ -1,0 +1,8 @@
+i0 = 25 57 48 37 12 92 86 33 
+i1 = 12 | 57 48 37 25 92 86 33 | -> colocou o primeiro numero menor na posição 1 e o numero que tava la na posição anterior do menor numero
+i2 = 12 25 | 48 37 57 92 86 33 |
+i3 = 12 25 33 | 37 57 92 86 48 |
+i4 = 12 25 33 37 | 57 92 86 48 |
+i5 = 12 25 33 37 48 | 92 86 57 |
+i6 = 12 25 33 37 48 57 | 86 92 |
+i7 = { 12 25 33 37 48 57 86 92 }
