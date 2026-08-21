@@ -1,0 +1,8 @@
+=========================  PROPREDADES ==========================|
+ ATRIBUTO         LEITURA                    ESCRITA             |
+velocidade    getVelocidade()     setVelocidade(int velocidade)  |
+ cadencia      getCadencia()        setCadencia(int cadencia)    |
+     x             getX()                    setX(x)             |
+-----------------------------------------------------------------|
+
+get/set -> propriedade Java Bean, +/- uma struct de C
