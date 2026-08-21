@@ -1,0 +1,98 @@
+============= revisão =============
+
+definição de classe
+classe bicicleta com 3 atributos, vel, engrenagem, cadencia
+  os objetos tem estados e comportamentos, no caso o atributo 
+  os métodos são os comportamentos, que causam alterações nos atributos, ex: void mudarCadencia()
+  this ("este objeto") se nã tivesse ele nn poderia usar o mesmo nome de variavel, se tiver () ta se referindo a metodo, se nn tiver nada é a atributo, igual o bike.algumaCoisa
+  construtor: o nome do metdo tem que ser identico ao da classe, nn precisa de void pq não tem que ter retorno, se tiver void nn vai dar erro mas nn vai ser entendido como classe
+  Bicicleta bike = new Bicicleta(10): atribui velocidade inicial puxando do construtor, pode ser vazio
+    Bicicleta bike = new Bicicleta() construtor padrão, se vc naõ cria ele, pode usar, se o construtor foi criado no cod. não pode usar o padrão, senão não compila
+  pq no frear nn preciso de this. ? pq nada entra em conflito
+
+encapsulamento: modificadores de acesso
+  criou? taca private
+  
+=========== codigos ==============
+class BicicletaDemo { //a classe é a forminha que modela a areia
+    public static void main(String[] args) {
+
+        // Bicicleta bike = new Bicicleta();
+        Bicicleta bike = new Bicicleta(10); //criando objeto novo dentro da classe bicicleta, criado no Heap, , bike nn é uma classe, é um objeto, numa caixina de memoria tem "bike" e bike tem velocidade e afins
+        System.out.printf(
+                "[%s] velocidade: %2d, engrenagem: %2d, cadência: %2d\n",
+                "bike",
+                bike.velocidade, bike.engrenagem, bike.cadencia);
+
+        bike.mudarCadencia(30);//permitindo alteração que não foi o metodo que fez, paia ne, ta dizendo que são 30 pedaladas pra 0 velocidade, ERRADO, deveria estar como private pra impedir esse tipo de coisa, se precisar ou dever ser alterado teria que ser por terceirps, no caso método
+        bike.velocidade = 0; 
+        System.out.printf("[%s] velocidade: %2d, engrenagem: %2d, cadência: %2d\n",
+                "bike",
+                bike.velocidade, bike.engrenagem, bike.cadencia);
+
+        bike.frear();
+        bike.frear();
+        System.out.printf("[%s] velocidade: %2d, engrenagem: %2d, cadência: %2d\n",
+                "bike",
+                bike.velocidade, bike.engrenagem, bike.cadencia);
+    }
+}
+
+============================================= codigo alterado
+class Bicicleta {
+    // atributos (variáveis de instância)
+    private int velocidade = 0;
+    private int engrenagem = 1;
+    private int cadencia = 0; // o private nn permite nem alteração nem leitura, pra alterar isso precisa de um metodo
+
+    // construtor
+    Bicicleta(int velocidade) {
+        this.velocidade = velocidade;
+    }
+
+    // métodos (comportamentos)
+    void mudarCadencia(int cadencia) {
+        this.cadencia = cadencia;
+    }
+
+    void mudarEngrenagem(int novaEngrenagem) {
+        engrenagem = novaEngrenagem;
+    }
+
+    void frear() {
+        cadencia = cadencia - 1;
+        velocidade = velocidade - 5;
+
+        if (velocidade < 0) {
+            velocidade = 0;
+        }
+
+        if (cadencia < 0) {
+            cadencia = 0;
+        }
+    }
+}
+==
+class BicicletaDemo { //a classe é a forminha que modela a areia
+    public static void main(String[] args) {
+
+        // Bicicleta bike = new Bicicleta();
+        Bicicleta bike = new Bicicleta(10); //criando objeto novo dentro da classe bicicleta, criado no Heap
+        System.out.printf(
+                "[%s] velocidade: %2d, engrenagem: %2d, cadência: %2d\n",
+                "bike",
+                bike.velocidade, bike.engrenagem, bike.cadencia);
+
+        bike.mudarCadencia(30);//permitindo alteração que não foi o metodo que fez
+        bike.velocidade = 0; 
+        System.out.printf("[%s] velocidade: %2d, engrenagem: %2d, cadência: %2d\n",
+                "bike",
+                bike.velocidade, bike.engrenagem, bike.cadencia);
+
+        bike.frear();
+        bike.frear();
+        System.out.printf("[%s] velocidade: %2d, engrenagem: %2d, cadência: %2d\n",
+                "bike",
+                bike.velocidade, bike.engrenagem, bike.cadencia);
+    }
+}
