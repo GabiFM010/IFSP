@@ -12,6 +12,9 @@ classe bicicleta com 3 atributos, vel, engrenagem, cadencia
 
 encapsulamento: modificadores de acesso
   criou? taca private
+  escnde a implementação e mostra só o essencial
+
+construtor tem que ser public tbm
   
 =========== codigos ==============
 class BicicletaDemo { //a classe é a forminha que modela a areia
