@@ -3,13 +3,16 @@ class Bicicleta {
     private int velocidade = 0;
     private int engrenagem = 1;
     private int cadencia = 0;
+    /*private int velocidade = cadencia * engrenagem
+        isso aqui só vai ser usado/mexido no começo da compilação
+    */
 
     // construtor
-    Bicicleta(int velocidade) {
-        this.velocidade = velocidade;
+    Bicicleta(int engrenagem) {
+        this.engrenagem = engrenagem;
     }
 
-    Bicicleta(){
+    public Bicicleta(){
     }
 
     // métodos (comportamentos)
@@ -17,6 +20,11 @@ class Bicicleta {
         this.cadencia = cadencia;
     }
 
+    private void atualizarVelocidade() { //metodo pra uso interno
+        velocidade = cadencia * engrenagem;
+    }
+
+    //gets e sets
     public int getCadencia(){
         return cadencia;
     }
@@ -48,4 +56,7 @@ class Bicicleta {
     }
 }
 
-// defina uma classe pra calcular a area do reatngulo
+/* pq é feio repetir linha?
+    D.R.Y - don´t repeat yourself
+    são dois pontos diferentes pra fazer correção. corrige um mas nn corrige o outro por esquecimento por ex.
+*/
