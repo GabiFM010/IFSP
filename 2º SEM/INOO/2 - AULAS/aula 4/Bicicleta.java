@@ -59,4 +59,6 @@ class Bicicleta {
 /* pq é feio repetir linha?
     D.R.Y - don´t repeat yourself
     são dois pontos diferentes pra fazer correção. corrige um mas nn corrige o outro por esquecimento por ex.
+
+    tapa na cara do usuario = reação a erro
 */
