@@ -12,9 +12,9 @@ o que o metodo faz não importa, o que importa é a mecanica e a passagem de arg
 
 p1                                |
 int z = 15;                       |
-		res = promo.triplicar(z);     |
-		System.out.println(res);      | não passa double como int por que ele é maior, afunila a qtdd  dele, assim como long querendo ser double
-p2                                | nesse caso da pra fazer uma coerção 
-public int triplicar( int x ) {   |
-		return 3 * x;                 |
-	}                               |
+		res = promo.triplicar(z); |
+		System.out.println(res);  | não passa double como int por que ele é maior, afunila a qtdd  dele, assim como long querendo ser double
+p2                                | nesse caso da pra fazer uma coerção -> pegar o numero e forçãr ele a ser tratado diferente
+public int triplicar( int x ) {   | casting
+		return 3 * x;             | isso nem java é, é C
+	}                             |
