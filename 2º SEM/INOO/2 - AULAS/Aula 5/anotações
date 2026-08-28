@@ -19,4 +19,4 @@ public int triplicar( int x ) {   | casting
 		return 3 * x;             | isso nem java é, é C
 	}                             | "EU SEI que é um double, atribui como int que ta blz"
 
-
+toda classe publica tem que ter o nome do arquivo igual(identico ta) ao da classe
