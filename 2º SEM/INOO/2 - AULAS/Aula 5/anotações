@@ -1,1 +1,20 @@
 formato de data ao contratrio (20260828) - se não estiver ao contrario o eclipse não salva em ordem cronologica, ao contrario ele salva
+
+digitar syso e <ctrl> + <espaço> = System.out.println();
+
+a ide faz uma avaliação sintatica automaticamente pra ver se temm erro
+
+o double tem capacidade de um int e mais
+
+res = promo.dobrar(z); // um inteiro sendo tratado como double
+
+o que o metodo faz não importa, o que importa é a mecanica e a passagem de args
+
+p1                                |
+int z = 15;                       |
+		res = promo.triplicar(z);     |
+		System.out.println(res);      | não passa double como int por que ele é maior, afunila a qtdd  dele, assim como long querendo ser double
+p2                                | nesse caso da pra fazer uma coerção 
+public int triplicar( int x ) {   |
+		return 3 * x;                 |
+	}                               |
