@@ -6,7 +6,7 @@ a ide faz uma avaliação sintatica automaticamente pra ver se temm erro
 
 o double tem capacidade de um int e mais
 
-res = promo.dobrar(z); // um inteiro sendo tratado como double
+res = promo.dobrar(z); // um inteiro sendo tratado como double (é double?)
 
 o que o metodo faz não importa, o que importa é a mecanica e a passagem de args
 
@@ -20,3 +20,37 @@ public int triplicar( int x ) {   | casting
 	}                             | "EU SEI que é um double, atribui como int que ta blz"
 
 toda classe publica tem que ter o nome do arquivo igual(identico ta) ao da classe
+
+abs(); -> numero absoluto
+
+qualquer numero no meio do codigo é double
+
+é uma pratica em java so classificar as variaveis como double
+
+dobrar(2f); -> isso aqui, meu amigo, e um float -> so colocar um f
+
+a assinatura de um metodo é assinada pelo seu nome e pelo tipo dele
+
+abs(int), abs(float), abs(double), são todos diferentes -> sobrecarga de metodos, possuem mesmo nome mas assinaturas diferentes
+
+============================================== gemini
+"res é double?"
+	## Por que res obrigatoriamente é double?
+		* A função espera int: O método triplicar(int x) exige receber um número inteiro.
+		* A variável passada é int: Você declarou int z = 15; e passou z para a função. Até aqui, tudo perfeito e compatível.
+		* O retorno da função é int: A função devolve 3 * 15, que resulta no int 45.
+		* A regra de "afunilamento": Se res fosse uma variável do tipo int, o código rodaria normal. Mas como você mencionou que o Java reclamaria de "passar double como int por que ele é maior", significa que res já tinha sido declarada antes como double.
+		* Promoção Implícita: O Java aceita colocar um int (45) dentro de um double (res) sem reclamar, porque o double é maior e "cumprimenta" o inteiro, transformando o 45 em 45.0. O inverso é que exige o casting.
+	## Correção sobre a linguagem
+	Isso é Java sim! A sintaxe de declaração de métodos, objetos (promo.triplicar) e o comando de saída System.out.println(res); são exclusivos e característicos do Java. O C usa printf e não tem essa estrutura de pacotes nativa.
+
+"abs(int), abs(float), abs(double), são todos diferentes -> sobrecarga"
+	Exatamente! Você matou a charada. Isso é o conceito puro de sobrecarga de métodos (ou method overloading).
+	No Java, a classe Math possui exatamente essa estrutura para a função de valor absoluto (Math.abs):
+		* public static int abs(int a)
+		* public static long abs(long a)
+		* public static float abs(float a)
+		* public static double abs(double a)
+	## Como o Java sabe qual usar?
+	Eles compartilham o mesmo nome, mas possuem assinaturas diferentes (parâmetros diferentes). O compilador do Java olha para o tipo de dado que você colocou entre parênteses e escolhe a função certa em tempo de compilação.
+	Se você mandar Math.abs(-5), ele chama a versão int. Se mandar Math.abs(-5.5), ele chama a versão double.
