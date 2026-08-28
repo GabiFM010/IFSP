@@ -17,4 +17,6 @@ int z = 15;                       |
 p2                                | nesse caso da pra fazer uma coerção -> pegar o numero e forçãr ele a ser tratado diferente
 public int triplicar( int x ) {   | casting
 		return 3 * x;             | isso nem java é, é C
-	}                             |
+	}                             | "EU SEI que é um double, atribui como int que ta blz"
+
+
