@@ -33,6 +33,11 @@ a assinatura de um metodo é assinada pelo seu nome e pelo tipo dele
 
 abs(int), abs(float), abs(double), são todos diferentes -> sobrecarga de metodos, possuem mesmo nome mas assinaturas diferentes
 
+construtores: tem que ter mesmo nome da clase
+			  não tem tipo de retorno, se tiver vira classe
+
+o .this serve pra chamar construtor tbm
+
 ============================================== gemini
 "res é double?"
 	## Por que res obrigatoriamente é double?
@@ -54,3 +59,18 @@ abs(int), abs(float), abs(double), são todos diferentes -> sobrecarga de metodo
 	## Como o Java sabe qual usar?
 	Eles compartilham o mesmo nome, mas possuem assinaturas diferentes (parâmetros diferentes). O compilador do Java olha para o tipo de dado que você colocou entre parênteses e escolhe a função certa em tempo de compilação.
 	Se você mandar Math.abs(-5), ele chama a versão int. Se mandar Math.abs(-5.5), ele chama a versão double.
+ º"public class FormatadorMoeda {
+	public String formatar (double valor) {
+		return String.format("R$ %.2f", valor);
+	}
+	
+	public String formatar(int centavos) { // evitar repetição, usou um metodo dentro do outro
+		double valor = centavos / 100.0; 
+		return formatar(valor);
+	}
+}
+
+/*pq dividir por 100.0 e não 100? tem a ver, na vdd, com os tipos.
+tem um inteiro ali e eu quero deixar claro
+ que um numero int vai ser dividido por um double*/"
+
