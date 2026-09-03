@@ -1,0 +1,318 @@
+quicksort em c =============================================================================================================================================================================================================================================
+O Quicksort em C é um algoritmo de ordenação eficiente que usa a estratégia de dividir para conquistar, escolhendo um elemento como pivô para reorganizar o vetor. [1, 2] 
+## Implementação Básica
+Aqui está um código funcional em C usando o último elemento como pivô:
+
+#include <stdio.h>
+void troca(int *a, int *b) {
+    int t = *a;
+    *a = *b;
+    *b = t;
+}
+int particiona(int v[], int inicio, int fim) {
+    int pivo = v[fim];
+    int i = (inicio - 1);
+
+    for (int j = inicio; j <= fim - 1; j++) {
+        if (v[j] < pivo) {
+            i++;
+            troca(&v[i], &v[j]);
+        }
+    }
+    troca(&v[i + 1], &v[fim]);
+    return (i + 1);
+}
+void quicksort(int v[], int inicio, int fim) {
+    if (inicio < fim) {
+        int pi = particiona(v, inicio, fim);
+        quicksort(v, inicio, pi - 1);
+        quicksort(v, pi + 1, fim);
+    }
+}
+int main() {
+    int v[] = {10, 7, 8, 9, 1, 5};
+    int n = sizeof(v) / sizeof(v[0]);
+    
+    quicksort(v, 0, n - 1);
+    
+    printf("Vetor ordenado: \n");
+    for (int i = 0; i < n; i++)
+        printf("%d ", v[i]);
+    return 0;
+}
+
+## Como Funciona
+
+* Escolha do Pivô: O elemento final do vetor é selecionado.
+* Particionamento: Os números menores que o pivô vão para a esquerda e os maiores vão para a direita.
+* Recursão: O processo se repete nas duas metades até que o vetor esteja totalmente ordenado. [2, 3, 4, 5, 6] 
+
+Para entender melhor a movimentação dos ponteiros da esquerda e da direita durante o processo de troca, você pode assistir a esta explicação passo a passo:
+· 1970 M01 1
+Se quiser, posso te mostrar:
+
+* Como usar a função nativa qsort() da biblioteca padrão <stdlib.h>
+* Como escolher um pivô aleatório para evitar o pior caso
+
+
+[1] [https://www.ime.usp.br](https://www.ime.usp.br/~pf/algoritmos/aulas/quick.html)
+[2] [https://www.youtube.com](https://www.youtube.com/watch?v=iNkNlIPjiDI)
+[3] [https://gist.github.com](https://gist.github.com/marcoscastro/1dd65900cc7b188e1ab9)
+[4] [https://coddy.tech](https://coddy.tech/visualize/pt/sorting/quick-sort)
+[5] [https://www.geeksforgeeks.org](https://www.geeksforgeeks.org/c/quick-sort-in-c/)
+[6] [https://medium.com](https://medium.com/@dinmukhamed.dukumbayev26/quicksort-is-c-a8cc34a6ccc0)
+
+anexo ======================================================================================================================================================================================================================================================
+Com base no código e no estado atual do vetor apresentado nos slides, vamos executar o passo a passo da função particionar(numeros, 4, 7) para responder às perguntas da página 27:
+## Estado Inicial (no início do slide 27)
+
+* Vetor completo: {18, 27, 32, 37, 95, 70, 60, 64}
+* Subvetor analisado (índices 4 a 7): {95, 70, 60, 64}
+* inicio = 4, fim = 7
+* pivot = vetor[7] = 64
+* i = inicio - 1 = 3
+
+------------------------------
+## Execução do Laço (for j = 4 até 6)
+
+   1. j = 4: vetor[4] é 95.
+   * 95 < 64? Não. Nenhuma ação é tomada.
+   2. j = 5: vetor[5] é 70.
+   * 70 < 64? Não. Nenhuma ação é tomada.
+   3. j = 6: vetor[6] é 60.
+   * 60 < 64? Sim!
+      * Incrementa i: i = 4.
+      * Troca vetor[4] (95) com vetor[6] (60).
+      * O vetor fica temporariamente assim: {18, 27, 32, 37, **60**, 70, **95**, 64}.
+   
+------------------------------
+## Troca Final (Posicionamento do Pivô)
+Após sair do laço, ocorre a troca do pivô para a posição correta:
+
+* Troca vetor[i + 1] (vetor[5], que é 70) com vetor[fim] (vetor[7], que é 64).
+
+------------------------------
+## Respostas
+
+* a) Qual será o valor retornado?
+O valor retornado será 5 (que corresponde a i + 1).
+* b) E como fica o vetor numeros?
+O vetor numeros final fica ordenado da seguinte forma:
+{18, 27, 32, 37, 60, 64, 95, 70}
+
+Se precisar, posso te ajudar a rastrear as próximas chamadas recursivas que vão finalizar a ordenação desse vetor!
+
+o que é o parametro fim? ===================================================================================================================================================================================================================================
+O parâmetro fim representa o índice do último elemento do pedaço (ou subvetor) que está sendo analisado ou ordenado naquele momento.
+Em algoritmos de dividir para conquistar como o QuickSort, o vetor original é quebrado logicamente em partes menores:
+
+* Na primeira chamada dentro da função main, o fim recebe TAM - 1 (ou seja, 7), indicando o último índice do vetor completo.
+* Conforme as divisões acontecem, o fim muda para delimitar apenas a subpartição da direita ou da esquerda (por exemplo, indo apenas até pivot - 1).
+
+Ele também é fundamental para o algoritmo saber onde encontrar o elemento pivô (já que o código usa sempre vetor[fim] como base) e para determinar a condição de parada da recursão (if (inicio < fim)).
+Se quiser, posso te mostrar como os valores de inicio e fim mudam na próxima chamada recursiva desse exercício!
+
+mostre a execução passo a passo de um quick sort num vetor de numeros aleatrorios, tamanho 7 ===============================================================================================================================================================
+Vamos simular o QuickSort com um vetor de tamanho 7 gerado aleatoriamente:
+[91, 24, 13, 45, 41, 38, 27]
+Adotaremos a mesma lógica dos seus slides: o último elemento do subvetor sempre será o pivô, e usaremos as variáveis i (limite dos menores) e j (varredura).
+------------------------------
+## 1ª Rodada: QuickSort(vetor, 0, 6)
+
+* 
+* Vetor: [91, 24, 13, 45, 41, 38, 27]
+* inicio = 0, fim = 6
+* Pivô: 27 (índice 6)
+* i = -1 (um antes do início)
+* 
+
+Varredura (j de 0 a 5):
+
+* 
+* j=0 (91): Não é menor que 27. Nada acontece.
+* j=1 (24): É menor que 27! Incrementa i para 0 e troca vetor[0] com vetor[1].
+* Vetor: [24, 91, 13, 45, 41, 38, 27]
+* j=2 (13): É menor que 27! Incrementa i para 1 e troca vetor[1] com vetor[2].
+* Vetor: [24, 13, 91, 45, 41, 38, 27]
+* j=3, j=4, j=5 (45, 41, 38): Nenhum é menor que 27. Nenhuma troca.
+* 
+
+Troca final (posiciona o pivô):
+
+* 
+* Troca vetor[i+1] (vetor[2] = 91) com o pivô (vetor[6] = 27).
+* Vetor resultante: [24, 13, 27, 45, 41, 38, 91]
+* O pivô 27 está fixado no índice 2. O QuickSort agora se divide em duas metades: à esquerda do 27 (0 a 1) e à direita (3 a 6).
+* 
+
+------------------------------
+## 2ª Rodada: Subvetor Esquerdo QuickSort(vetor, 0, 1)
+
+* 
+* Vetor: [24, 13 | 27, 45, 41, 38, 91]
+* inicio = 0, fim = 1
+* Pivô: 13 (índice 1)
+* i = -1
+* 
+
+Varredura (j = 0):
+
+* 
+* j=0 (24): Não é menor que 13. Sem trocas.
+* 
+
+Troca final:
+
+* 
+* Troca vetor[i+1] (vetor[0] = 24) com o pivô (vetor[1] = 13).
+* Vetor resultante: [13, 24, 27, 45, 41, 38, 91]
+* O pivô 13 está fixado no índice 0. (Subvetores restantes aqui têm tamanho menor que 1, então estão resolvidos).
+* 
+
+------------------------------
+## 3ª Rodada: Subvetor Direito QuickSort(vetor, 3, 6)
+
+* 
+* Vetor: [13, 24, 27 | 45, 41, 38, 91]
+* inicio = 3, fim = 6
+* Pivô: 91 (índice 6)
+* i = 2 (inicio - 1)
+* 
+
+Varredura (j de 3 a 5):
+
+* 
+* j=3 (45), j=4 (41), j=5 (38): Todos são menores que 91!
+* i será incrementado a cada passo e trocará os elementos com eles mesmos. O vetor não muda de ordem na varredura.
+* 
+
+Troca final:
+
+* 
+* Troca vetor[i+1] (vetor[6] = 91) com o pivô (vetor[6] = 91). Fica no mesmo lugar.
+* O pivô 91 está fixado no índice 6. Nova quebra à esquerda: QuickSort(vetor, 3, 5).
+* 
+
+------------------------------
+## 4ª Rodada: Subvetor QuickSort(vetor, 3, 5)
+
+* 
+* Vetor: [13, 24, 27 | 45, 41, 38 | 91]
+* Pivô: 38 (índice 5)
+* i = 2
+* 
+
+Varredura (j de 3 a 4):
+
+* 
+* j=3 (45) e j=4 (41): Nenhum é menor que 38.
+* 
+
+Troca final:
+
+* 
+* Troca vetor[i+1] (vetor[3] = 45) com o pivô (vetor[5] = 38).
+* Vetor resultante: [13, 24, 27, 38, 41, 45, 91]
+* O pivô 38 está fixado no índice 3. Próxima quebra à direita: QuickSort(vetor, 4, 5).
+* 
+
+------------------------------
+## 5ª Rodada: Último ajuste QuickSort(vetor, 4, 5)
+
+* 
+* Vetor: [13, 24, 27, 38 | 41, 45 | 91]
+* Pivô: 45 (índice 5)
+* i = 3
+* 
+
+Varredura (j = 4):
+
+* 
+* j=4 (41): É menor que 45. i vai para 4, troca vetor[4] com vetor[4] (ele mesmo).
+* 
+
+Troca final:
+
+* 
+* Troca vetor[i+1] (vetor[5] = 45) com ele mesmo.
+* Vetor final totalmente ordenado: [13, 24, 27, 38, 41, 45, 91]
+* 
+
+Se você quiser, posso criar um exercício prático com outro vetor para você tentar adivinhar onde o pivô vai parar! O que acha?
+
+def particionar_passo_a_passo(vetor, inicio, fim, passos):
+    pivo = vetor[fim]
+    i = inicio - 1
+    passos.append(f"--- Particionando de {inicio} a {fim} (Pivô: {pivo}) ---")
+    passos.append(f"Estado inicial do trecho: {vetor[inicio:fim+1]}")
+    
+    for j in range(inicio, fim):
+        if vetor[j] < pivo:
+            i += 1
+            vetor[i], vetor[j] = vetor[j], vetor[i]
+            passos.append(f"j={j} (elemento {vetor[i]} < {pivo}): trocou com i={i}. Vetor atual: {vetor.copy()}")
+        else:
+            passos.append(f"j={j} (elemento {vetor[j]} >= {pivo}): não troca. Vetor atual: {vetor.copy()}")
+            
+    vetor[i+1], vetor[fim] = vetor[fim], vetor[i+1]
+    passos.append(f"Troca final do pivô para a posição {i+1}: {vetor.copy()}")
+    return i + 1
+def quicksort_passo_a_passo(vetor, inicio, fim, passos):
+    if inicio < fim:
+        pi = particionar_passo_a_passo(vetor, inicio, fim, passos)
+        quicksort_passo_a_passo(vetor, inicio, pi - 1, passos)
+        quicksort_passo_a_passo(vetor, pi + 1, fim, passos)
+v = [91, 24, 13, 45, 41, 38, 27]passos = []
+quicksort_passo_a_passo(v, 0, 6, passos)
+for p in passos:
+    print(p)
+
+faça com base no doc anexado================================================================================================================================================================================================================================
+Vamos fazer o passo a passo com o vetor exato que estava sendo processado no documento anexado!
+No slide 26, o algoritmo faz a chamada recursiva QuickSort(numeros, 4, 7). Vamos detalhar o que acontece dentro do particionar (que resolvemos no passo anterior) e as chamadas que vêm logo em seguida para terminar de ordenar o vetor.
+O vetor inicial desse bloco (slide 26/27) é:
+{18, 27, 32, 37, 95, 70, 60, 64}
+------------------------------
+## Passo 1: Execução de particionar(numeros, 4, 7)
+
+* Subvetor focado: {95, 70, 60, 64} (índices 4 a 7).
+* Pivô: 64 (último elemento).
+* Varredura (j de 4 a 6): O único elemento menor que 64 é o 60. Ele é jogado para o início do subvetor.
+* Troca do pivô: O 64 troca de lugar com o 95.
+* Resultado do particionamento: O vetor se transforma em {18, 27, 32, 37, 60, 64, 95, 70} e a função retorna o índice 5 (posição onde o 64 ficou fixado).
+
+Como o pivot retornado foi 5, a função principal QuickSort se divide em duas novas chamadas recursivas:
+
+   1. Esquerda: QuickSort(numeros, 4, 4) (índices de inicio até pivot - 1).
+   2. Direita: QuickSort(numeros, 6, 7) (índices de pivot + 1 até fim).
+
+------------------------------
+## Passo 2: Subvetor Esquerdo QuickSort(numeros, 4, 4)
+
+* Como inicio (4) não é menor que fim (4), a condição if (inicio < fim) é falsa.
+* Essa chamada é encerrada imediatamente sem fazer nada. O elemento 60 já está na posição correta.
+
+------------------------------
+## Passo 3: Subvetor Direito QuickSort(numeros, 6, 7)
+
+* Vetor atual: {18, 27, 32, 37, 60, 64, 95, 70}
+* Subvetor focado: {95, 70} (índices 6 e 7).
+* Entra na função particionar(numeros, 6, 7):
+* Pivô: 70 (índice 7).
+   * i = 6 - 1 = 5.
+   * Varredura (j = 6): O elemento vetor[6] é 95. 95 < 70? Não. Nenhuma troca ocorre no laço.
+   * Troca do pivô: O pivô 70 troca de lugar com vetor[i + 1] (que é vetor[6] = 95).
+   * Resultado: O subvetor vira {70, 95}.
+   * A função retorna o índice 6.
+
+O vetor completo agora está assim:
+{18, 27, 32, 37, 60, 64, 70, 95}
+------------------------------
+## Passo 4: Fim da Execução (Condições de Parada)
+A partir do pivot 6, restam as duas últimas subchamadas lógicas:
+
+* QuickSort(numeros, 6, 5) (Esquerda): inicio < fim é falso. Retorna.
+* QuickSort(numeros, 7, 7) (Direita): inicio < fim é falso. Retorna.
+
+Todas as funções empilhadas na memória terminam de executar (exatamente como ilustrado nos slides de pilha do seu documento), e o vetor retorna para a função main completamente ordenado!
+Gostaria que eu gerasse um desafio em formato de quiz com algumas perguntas sobre esse código do documento para testar seus conhecimentos para a prova?
