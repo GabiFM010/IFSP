@@ -1,0 +1,23 @@
+=================== PACOTES ===================
+SRC - eclipse
+  |- EDU
+  |   |- IFSP
+  |       |- CLIENTES
+  |       |- PRODUTOS
+  |- PRODUTO
+
+- ENDEREÇOS
+edu/ifsp/clientes |
+                   } package pacote
+edu.ifsp.clientes |
+
+CONVENÇÃO ====================================
+eds.com (endereço convenção na empresa eds
+com.eds
+com.hp
+    |-
+    |-
+
+NAS AULAS ::::::::::::::::::::::::::::::::::::::
+A CONVENÇÃO SERA edu.ifsp.estatico
+pq? pq dentro desse pacote sera incluido variaveis e afins estaticos
