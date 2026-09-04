@@ -21,3 +21,19 @@ com.hp
 NAS AULAS ::::::::::::::::::::::::::::::::::::::
 A CONVENÇÃO SERA edu.ifsp.estatico
 pq? pq dentro desse pacote sera incluido variaveis e afins estaticos
+
+NO ECLIPSE - PARA CRIAR UM CONSTRUTOR
+Va numa linha em branco e aperte ctrl + space, a primeira coisa a aparecer sera um construtor
+
+=================== voltando ====================
+não da pra fazer função sem classe 
+da pra ter um atributo que pertence a classe -> Calculadora calc = new Calculadora();
+  cada new desse é uma instancia
+    ex Calculadora calc = new Calculadora();, 
+       Calculadora result = new Calculadora(); 
+
+================== constantes ================
+#define TAXA 27.5 (C)
+int x = 10; pode ser alterado
+não pode ser alterado: final int x = 10
+
