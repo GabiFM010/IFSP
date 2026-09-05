@@ -1,3 +1,4 @@
+METADE 1 ====================================================================================================================================================================
 =================== PACOTES ===================
 SRC - eclipse
   |- EDU
@@ -39,3 +40,18 @@ não pode ser alterado: final int x = 10
 quando eu declaro um atributo com final eu assumo que um construtor mexerá nele, se for de outra forma da pau
 atributo de classe com o static / final
 
+METADE 2 ====================================================================================================================================================================
+
+Associação
+-----------             -----
+|simulação| ----------- |sac| 
+-----------             -----
+          \              |
+            \            |
+              \          |                         TODAS SE CONHECEM, MAS NÃO OBRIGATORIAMENTE SE RELACIONAM DIRETAMENTE
+                \        |
+                  \      |
+                    \    |
+                    -------
+                    |price|
+                    -------
