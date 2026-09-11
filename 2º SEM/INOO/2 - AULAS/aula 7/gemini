@@ -1,0 +1,16 @@
+Para que o código funcione corretamente, você precisa calcular a raiz quadrada de x e armazenar o resultado na variável res. No Java, usamos o método Math.sqrt() para essa operação.
+A linha de código que deve ser inserida é:
+
+double res = Math.sqrt(x);
+
+## Código Completo
+O código final ficará assim:
+
+public class Raiz {
+    public static void main(String[] args) {
+        double x = 10;
+        double res = Math.sqrt(x); // Linha inserida
+        System.out.println("raiz de " + x + " = " + res);
+    }
+}
+
